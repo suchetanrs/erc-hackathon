@@ -7,7 +7,7 @@ import draw_graph as astar
 import time
 import sys
 
-#############ID###############
+############# ID ###############
 # index 0 - X
 # index 1 - Y
 # index 2:
@@ -168,6 +168,7 @@ class Planner():
         self.end_coord_id=[]
         # time.sleep(1)
 
+        astar.active_make_obstacles()
         self.path_points=[]
         return SetStartEndPointResponse(0)
     

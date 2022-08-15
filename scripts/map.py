@@ -109,7 +109,7 @@ class Plots():
                 counter+=1
                 plt.plot(items[0],items[1],marker="o")
                 # self.obstacle_points.remove([items[0],items[1]])
-            plt.pause(1e-100)
+            # plt.pause(1e-100)
             
 
 if __name__=="__main__":

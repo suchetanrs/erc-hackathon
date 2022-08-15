@@ -56,8 +56,8 @@ def active_make_obstacles():
 
 
 def draw_obstacles():
-    make_obstacles1()
-    # active_make_obstacles()
+    # make_obstacles1()
+    active_make_obstacles()
     for x in range(no_of_cols):
         for y in range(no_of_rows):
             if([x,y] in obstacle_list):

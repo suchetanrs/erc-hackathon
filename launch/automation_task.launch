@@ -29,8 +29,9 @@
 	</node>
  
 	<!-- Add the nodes here -->
-    <!-- <node name="path_planner" pkg="maze_solver" type="path_planner.py" output="screen"/>
-    <node name="tb3_controller" pkg="maze_solver" type="controller.py" output="screen"/>
-	<node name="colour_detector" pkg="maze_solver" type="colour_detection.py" output="screen"/> -->
+    <node name="map" pkg="erc_hackathon_22" type="map.py" output="screen"/>
+    <node name="Astar" pkg="erc_hackathon_22" type="Astar.py" output="screen"/>
+	<node name="turtle_move" pkg="erc_hackathon_22" type="turtle_move.py" output="screen"/>
+	<node name="brain" pkg="erc_hackathon_22" type="brain.py" output="screen"/>
 
 </launch>
