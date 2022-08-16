@@ -59,22 +59,22 @@ class Navigate():
         elif(abs(angle_to_goal - self.theta) > 0.05 and angle_to_goal > self.theta and abs(angle_to_goal - self.theta) < 3.1415):
             print("acw")
             speed.linear.x=0.0
-            speed.angular.z=0.1
+            speed.angular.z=0.15
         elif(abs(angle_to_goal - self.theta) > 0.05 and angle_to_goal > self.theta and abs(angle_to_goal - self.theta) > 3.14159):
             speed.linear.x=0.0
-            speed.angular.z=-0.1
+            speed.angular.z=-0.15
             print("cw")
         elif(abs(angle_to_goal - self.theta) > 0.05 and angle_to_goal < self.theta and abs(angle_to_goal - self.theta) < 3.1415):
             print("cw")
             speed.linear.x=0.0
-            speed.angular.z=-0.1
+            speed.angular.z=-0.15
         elif(abs(angle_to_goal - self.theta) > 0.05 and angle_to_goal < self.theta and abs(angle_to_goal - self.theta) > 3.14159):
             speed.linear.x=0.0
-            speed.angular.z=0.1
+            speed.angular.z=0.15
             print("acw")
         elif(abs(inc_x)>0.05 or abs(inc_y)>0.05):
             print("Forward")
-            speed.linear.x=0.15
+            speed.linear.x=0.22
             speed.angular.z=0.0
         else:
             speed.linear.x=0

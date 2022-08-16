@@ -29,13 +29,14 @@ class Planner():
         self.tracerset=[]
         self.start_coord=[0,0]
         print("STARTCOORD:{}".format(self.start_coord))
-        self.end_coord=[33,33]
+        self.end_coord=[24,10]
         hdist=astar.h_value([self.start_coord[0],self.start_coord[1]],[self.end_coord[0],self.end_coord[1]])
         # print("STARTCOORD:{}".format(self.start_coord))
         self.start_coord_id=[self.start_coord[0],self.start_coord[1],3,hdist,0,(hdist+0),[self.start_coord[0],self.start_coord[1]]]
         self.loopflag=False
         self.end_coord_id=[]
         # time.sleep(1)
+        self.no=1
 
         self.path_points=[]
     
@@ -88,6 +89,7 @@ class Planner():
                             self.path_points.append(obj)
                     if(flag==True):
                         break
+                astar.save_plot()
                 # astar.animate_plot()
                 # astar.show_plot()
                 break
@@ -167,8 +169,14 @@ class Planner():
         self.loopflag=False
         self.end_coord_id=[]
         # time.sleep(1)
-
+        self.no+=1
+        for i in range(0,35):
+            for j in range(0,12):
+                astar.draw_node(i,j,color='w')
+        astar.draw_grid()
         astar.active_make_obstacles()
+        astar.draw_obstacles()
+        astar.grid_id_generator()
         self.path_points=[]
         return SetStartEndPointResponse(0)
     

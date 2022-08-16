@@ -2,7 +2,11 @@
 from matplotlib import pyplot as plt
 import rospy
 from erc_hackathon_22.srv import GetPathPoints
-
+import os
+os.chdir('..')
+currdir=os.getcwd()
+print(currdir)
+currdir=currdir+'/live_map/path.jpg'
 no_of_rows=12
 no_of_cols=35
 
@@ -157,6 +161,15 @@ def show_plot():
 
 def animate_plot():
     plt.pause(1e-10)
+
+def save_plot():
+    try:
+        plt.savefig(currdir)
+    except:
+        print("Main thread not in main loop")
+
+def clear_plot():
+    plt.clf()
 
 def draw_node(x,y,color):
     rectangle = plt.Rectangle((x,y), 1, 1, fc=color)

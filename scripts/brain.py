@@ -2,6 +2,7 @@
 
 # from cmath import exp
 # from tracemalloc import start
+# from curses.textpad import rectangle
 import rospy
 from erc_hackathon_22.srv import SetGoalPoint, GetPathPoints, SetStartEndPoint
 from erc_hackathon_22.msg import GoalPoint
@@ -18,8 +19,8 @@ class MasterNode():
         self.curr_x=0
         self.curr_y=0
 
-        self.end_x=33
-        self.end_y=8
+        self.end_x=24
+        self.end_y=10
     
     def navigate(self):
         rospy.wait_for_service('/set_goal_point')
@@ -52,20 +53,38 @@ class MasterNode():
         
         rospy.wait_for_service('/get_path_points')
         try:
+            plt.clf()
+            plt.grid()
             get_path_points=rospy.ServiceProxy('/get_path_points', GetPathPoints)
             resp=get_path_points()
             self.path_points_list=resp.points
             for item in resp.points:
-                plt.plot(item.x,item.y,marker="x")
+                # plt.plot(item.x,item.y,marker="x")
+                rectangle=plt.Rectangle((floor(item.x),floor(item.y)),1,1,fc='b')
+                plt.gca().add_patch(rectangle)
             # plt.grid()
-            plt.pause(1e-10)
-            plt.grid()
-            plt.clf()
-            print("Got path points")
-            # return resp.points
+            # plt.pause(1e-10)
+            # plt.grid()
+            # print("Got path points")
+            return resp.points
         except:
             print("Cannot get path points")
         # print("Setting Goal point")
+        
+        # rospy.wait_for_service('get_obstacles_grid')
+        # try:
+        #     plt.grid()
+        #     get_obstacles_grid=rospy.ServiceProxy('/get_obstacles_grid', GetPathPoints)
+        #     resp=get_obstacles_grid()
+        #     self.obstacles_list=resp.points
+        #     for item in resp.points:
+        #         rectangle=plt.Rectangle((floor(item.x),floor(item.y)),1,1,fc='k')
+        #         plt.gca().add_patch(rectangle)
+        #     plt.grid()
+        #     plt.pause(1e-10)
+        #     print("Got obstacle points")
+        # except:
+        #     print("Cant get obstacles")
 
 
         # rospy.wait_for_service('/set_goal_point')
