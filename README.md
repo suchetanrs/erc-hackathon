@@ -1,7 +1,7 @@
 # Complete autonomous navigation stack for ERC Hackathon '22
 
 # Video demonstration
-Uploading video-demonstration.mp4… <br/>
+https://user-images.githubusercontent.com/79915569/184886184-19eea786-baeb-4013-9788-f6c42a76c6ef.mp4 <br/>
 __This video demonstrates live obstacle detection and planning__
 
 # Services
