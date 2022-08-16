@@ -60,8 +60,8 @@ def active_make_obstacles():
 def draw_obstacles():
 
     #############Comment out make_obstacles1() and uncomment active_make_obstacles() for live obstacle mapping########
-    make_obstacles1()
-    # active_make_obstacles()
+    # make_obstacles1()
+    active_make_obstacles()
     ##################################################################################################################
     for x in range(no_of_cols):
         for y in range(no_of_rows):

@@ -27,7 +27,7 @@ class Planner():
         self.openset=[]
         self.closedset=[]
         self.tracerset=[]
-        self.start_coord=[0,0]
+        self.start_coord=[2,2]
         print("STARTCOORD:{}".format(self.start_coord))
         self.end_coord=[24,10]
         hdist=astar.h_value([self.start_coord[0],self.start_coord[1]],[self.end_coord[0],self.end_coord[1]])
@@ -81,6 +81,7 @@ class Planner():
                     if(flag==True):
                         break
                 astar.save_plot()
+                print("plot saved")
                 break
 
             neighbour_list=astar.get_neighbor_list(curr_coord_id[0],curr_coord_id[1])
@@ -155,10 +156,11 @@ class Planner():
         # for i in range(0,35):
         #     for j in range(0,12):
         #         astar.draw_node(i,j,color='w')
-        # astar.draw_grid()
-        # astar.active_make_obstacles()
-        # astar.draw_obstacles()
-        # astar.grid_id_generator()
+        astar.clear_plot()
+        astar.draw_grid()
+        astar.active_make_obstacles()
+        astar.draw_obstacles()
+        astar.grid_id_generator()
 
         ##########################################################################################################
         self.path_points=[]

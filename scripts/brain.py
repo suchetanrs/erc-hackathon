@@ -16,8 +16,8 @@ class MasterNode():
         self.test_var=0
         self.path_points_list=[]
         self.curr_index=0
-        self.curr_x=0
-        self.curr_y=0
+        self.curr_x=2
+        self.curr_y=2
 
         self.end_x=24
         self.end_y=10
