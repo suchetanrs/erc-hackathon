@@ -2,5 +2,5 @@
 
 ![](https://github.com/suchetanrs/erc-hackathon-automation/blob/master/live_map/rosgraph.png)
 
-https://user-images.githubusercontent.com/79915569/184882304-38c1d447-0194-4afe-81d1-935df5bcbfb4.mp4
+https://user-images.githubusercontent.com/79915569/184882640-b3912b4b-38f2-4a72-b577-92d19efcb0b7.mp4
 
