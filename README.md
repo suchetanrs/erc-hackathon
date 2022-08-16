@@ -14,3 +14,9 @@
 
 ![](https://github.com/suchetanrs/erc-hackathon-automation/blob/master/live_map/rosgraph.png)
 
+
+
+
+https://user-images.githubusercontent.com/79915569/184886612-29ac9e93-3fb2-459d-bf43-6195e36f3505.mp4
+
+
