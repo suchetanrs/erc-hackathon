@@ -150,8 +150,8 @@ class Planner():
         # time.sleep(1)
         self.no+=1
 
-        ############################## Uncomment the following for pre-made obstacles ###########################
-        
+        ############################## Uncomment the following for live obstacle detection ###########################
+
         # for i in range(0,35):
         #     for j in range(0,12):
         #         astar.draw_node(i,j,color='w')

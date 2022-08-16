@@ -59,7 +59,7 @@ def active_make_obstacles():
 
 def draw_obstacles():
 
-    #############Comment out make_obstacles1() and uncomment active_make_obstacles()##################################
+    #############Comment out make_obstacles1() and uncomment active_make_obstacles() for live obstacle mapping########
     make_obstacles1()
     # active_make_obstacles()
     ##################################################################################################################
