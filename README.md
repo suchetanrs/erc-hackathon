@@ -2,8 +2,7 @@
 
 # Video demonstration
 
-<br/>
-__This video demonstrates live obstacle detection and planning__
+<br/>__This video demonstrates live obstacle detection and planning__
 
 # Services
 ```/get_path_points``` Can be called to get all the points to be traversed to reach the end co-ordinate. <br/>
