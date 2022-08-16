@@ -13,7 +13,7 @@
 
 # Video demonstration
 
-<br/>__This video demonstrates live obstacle detection and planning__
+__This video demonstrates real time obstacle detection and planning__
 
 https://user-images.githubusercontent.com/79915569/184886612-29ac9e93-3fb2-459d-bf43-6195e36f3505.mp4
 
