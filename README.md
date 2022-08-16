@@ -2,4 +2,4 @@
 
 ![](https://github.com/suchetanrs/erc-hackathon-automation/blob/master/live_map/rosgraph.png)
 
-https://www.youtube.com/watch?v=eaMUoARBSmo
+![](https://github.com/suchetanrs/erc-hackathon-automation/blob/master/README_files/recording.mp4)
