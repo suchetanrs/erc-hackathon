@@ -31,11 +31,9 @@ class Planner():
         print("STARTCOORD:{}".format(self.start_coord))
         self.end_coord=[24,10]
         hdist=astar.h_value([self.start_coord[0],self.start_coord[1]],[self.end_coord[0],self.end_coord[1]])
-        # print("STARTCOORD:{}".format(self.start_coord))
         self.start_coord_id=[self.start_coord[0],self.start_coord[1],3,hdist,0,(hdist+0),[self.start_coord[0],self.start_coord[1]]]
         self.loopflag=False
         self.end_coord_id=[]
-        # time.sleep(1)
         self.no=1
 
         self.path_points=[]
@@ -44,19 +42,12 @@ class Planner():
         print("Algo")
         curr_coord_id=self.start_coord_id
         self.openset.append(curr_coord_id)
-        # print(self.openset)
-        # print("****************")
         while(self.loopflag==False):
-            # time.sleep(0.01)
             lowest_f_val_id=[0,0,0,0,0,100000000000000,0]
-            # print("Lowest f_val_before_check:{}".format(lowest_f_val_id))
             for item in self.openset:
                 if(item[5]<lowest_f_val_id[5]):
                     lowest_f_val_id=item
             curr_coord_id=lowest_f_val_id
-            # print("Lowest f_val after check:{}".format(lowest_f_val_id))
-            # print("Currect coordinates:{}".format(curr_coord_id))
-            # print("Open set:{}".format(self.openset))
             self.openset.remove(curr_coord_id)
             self.closedset.append(curr_coord_id)
 
@@ -90,19 +81,15 @@ class Planner():
                     if(flag==True):
                         break
                 astar.save_plot()
-                # astar.animate_plot()
-                # astar.show_plot()
                 break
 
             neighbour_list=astar.get_neighbor_list(curr_coord_id[0],curr_coord_id[1])
             neighbour_list_id=[]
-            # print("(((((((((((((((((((((((((((((((((((((((((((((((((")
             for coords in neighbour_list:
                 temp_list=['None'] * 7
                 temp_list[0]=coords[0]
                 temp_list[1]=coords[1]
                 temp_list[2]=2
-                # h=astar.h_value([coords[0],coords[1]],[self.end_coord[0],self.end_coord[1]])
                 h=astar.h_value(coords,self.end_coord)
                 temp_list[3]=h
                 g=curr_coord_id[4]
@@ -114,11 +101,6 @@ class Planner():
                 temp_list[5]=temp_list[4]+temp_list[3]
                 temp_list[6]=[curr_coord_id[0],curr_coord_id[1]]
                 neighbour_list_id.append(temp_list)
-                # print(neighbour_list_id)
-            # print("--------------")
-            # print("Neighbout list ids:{}".format(neighbour_list_id))
-            # print("Open set:{}".format(self.openset))
-            # print("Closed set:{}".format(self.closedset))
 
             for item in neighbour_list_id:
                 in_closed_set=False
@@ -150,9 +132,6 @@ class Planner():
                                 x[6]=[curr_coord_id[0],curr_coord_id[1]]
                     if(n_in_open==False):
                         self.openset.append(item)
-                        
-            # time.sleep(0)
-            # print("END OF ITERATION")
         
         return GetPathPointsResponse(self.path_points)
 
@@ -170,13 +149,18 @@ class Planner():
         self.end_coord_id=[]
         # time.sleep(1)
         self.no+=1
-        for i in range(0,35):
-            for j in range(0,12):
-                astar.draw_node(i,j,color='w')
-        astar.draw_grid()
-        astar.active_make_obstacles()
-        astar.draw_obstacles()
-        astar.grid_id_generator()
+
+        ############################## Uncomment the following for pre-made obstacles ###########################
+        
+        # for i in range(0,35):
+        #     for j in range(0,12):
+        #         astar.draw_node(i,j,color='w')
+        # astar.draw_grid()
+        # astar.active_make_obstacles()
+        # astar.draw_obstacles()
+        # astar.grid_id_generator()
+
+        ##########################################################################################################
         self.path_points=[]
         return SetStartEndPointResponse(0)
     

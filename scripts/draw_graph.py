@@ -46,13 +46,11 @@ def make_obstacles2():
 
 def make_obstacles3():
     global obstacle_list
-    # obstacle_list=[[3,0],[3,1],[3,2],[3,3],[3,4],[3,5]]
     obstacle_list=[[3,0]]
 
 def active_make_obstacles():
     global obstacle_list
     rospy.wait_for_service('/get_obstacles_grid')
-    # rospy.loginfo("Grid")
     get_obstacles_grid=rospy.ServiceProxy('/get_obstacles_grid',GetPathPoints)
     resp=get_obstacles_grid()
     for item in resp.points:
@@ -60,8 +58,11 @@ def active_make_obstacles():
 
 
 def draw_obstacles():
-    # make_obstacles1()
-    active_make_obstacles()
+
+    #############Comment out make_obstacles1() and uncomment active_make_obstacles()##################################
+    make_obstacles1()
+    # active_make_obstacles()
+    ##################################################################################################################
     for x in range(no_of_cols):
         for y in range(no_of_rows):
             if([x,y] in obstacle_list):
