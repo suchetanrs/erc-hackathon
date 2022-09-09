@@ -19,8 +19,8 @@ class MasterNode():
         self.curr_x=2
         self.curr_y=2
 
-        self.end_x=24
-        self.end_y=10
+        self.end_x=33
+        self.end_y=8
     
     def navigate(self):
         rospy.wait_for_service('/set_goal_point')

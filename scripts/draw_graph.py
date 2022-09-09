@@ -1,4 +1,6 @@
 
+import matplotlib
+matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 import rospy
 from erc_hackathon_22.srv import GetPathPoints
@@ -164,10 +166,10 @@ def animate_plot():
     plt.pause(1e-10)
 
 def save_plot():
-    try:
-        plt.savefig(currdir)
-    except:
-        print("Main thread not in main loop")
+    # try:
+    plt.savefig(currdir)
+    # except:
+    #     print("Main thread not in main loop")
 
 def clear_plot():
     plt.clf()
